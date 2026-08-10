@@ -1,1 +1,490 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResQ — Emergency Intelligence</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       RESQ APP
+  ========================== -->
+
+  <div class="app">
+
+    <!-- TOP NAV -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">R</div>
+        <div>
+          <h1>ResQ</h1>
+          <span>Emergency Intelligence</span>
+        </div>
+      </div>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        System Online
+      </div>
+    </header>
+
+
+    <!-- =========================
+         SCREEN 1 — HOME
+    ========================== -->
+
+    <section id="home" class="screen active">
+
+      <div class="hero">
+
+        <div class="hero-badge">
+          AI-POWERED EMERGENCY RESPONSE
+        </div>
+
+        <h2>
+          Every second<br>
+          <span>matters.</span>
+        </h2>
+
+        <p>
+          ResQ intelligently coordinates emergency response,
+          ambulance dispatch, routing and hospital readiness.
+        </p>
+
+        <button class="primary-btn" onclick="showScreen('report')">
+          <span>🚨</span>
+          Report Emergency
+        </button>
+
+        <div class="hero-stats">
+          <div>
+            <strong>24/7</strong>
+            <small>Response Ready</small>
+          </div>
+
+          <div>
+            <strong>AI</strong>
+            <small>Decision Support</small>
+          </div>
+
+          <div>
+            <strong>LIVE</strong>
+            <small>Route Intelligence</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="feature-row">
+
+        <div class="feature-card">
+          <span>🚑</span>
+          <h3>Smart Dispatch</h3>
+          <p>Identify the most suitable available ambulance.</p>
+        </div>
+
+        <div class="feature-card">
+          <span>🧭</span>
+          <h3>Route Intelligence</h3>
+          <p>Adapt response routes when conditions change.</p>
+        </div>
+
+        <div class="feature-card">
+          <span>🏥</span>
+          <h3>Hospital Ready</h3>
+          <p>Notify hospitals before emergency arrival.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SCREEN 2 — REPORT
+    ========================== -->
+
+    <section id="report" class="screen">
+
+      <div class="page-heading">
+        <span class="eyebrow">STEP 01</span>
+        <h2>Report an Emergency</h2>
+        <p>Provide the basic details so ResQ can prepare a response.</p>
+      </div>
+
+      <div class="report-card">
+
+        <div class="input-group">
+          <label>Emergency Location</label>
+          <input
+            id="locationInput"
+            type="text"
+            placeholder="Example: Tirupati Bypass"
+            value="Tirupati Bypass"
+          >
+        </div>
+
+        <div class="input-row">
+
+          <div class="input-group">
+            <label>Emergency Type</label>
+            <select id="emergencyType">
+              <option>Road Accident</option>
+              <option>Medical Emergency</option>
+              <option>Fire</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label>People Affected</label>
+            <select id="peopleCount">
+              <option>1</option>
+              <option selected>2</option>
+              <option>3</option>
+              <option>4+</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="input-group">
+          <label>Severity</label>
+
+          <div class="severity-options">
+
+            <button type="button" class="severity active-severity">
+              🔴 Critical
+            </button>
+
+            <button type="button" class="severity">
+              🟠 Serious
+            </button>
+
+            <button type="button" class="severity">
+              🟡 Moderate
+            </button>
+
+          </div>
+        </div>
+
+        <button class="primary-btn full-btn" onclick="startAnalysis()">
+          Analyze Emergency
+          <span>→</span>
+        </button>
+
+        <button class="back-btn" onclick="showScreen('home')">
+          ← Back
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SCREEN 3 — AI PROCESSING
+    ========================== -->
+
+    <section id="processing" class="screen">
+
+      <div class="processing-container">
+
+        <div class="ai-orb">
+          <div class="orb-inner">✦</div>
+        </div>
+
+        <span class="eyebrow">RESQ AI ENGINE</span>
+
+        <h2>Analyzing emergency<span class="dots">...</span></h2>
+
+        <p id="processingText">
+          Understanding emergency details
+        </p>
+
+        <div class="process-list">
+
+          <div class="process-item" id="process1">
+            <span class="process-icon">○</span>
+            <span>Analyzing emergency severity</span>
+          </div>
+
+          <div class="process-item" id="process2">
+            <span class="process-icon">○</span>
+            <span>Finding available ambulances</span>
+          </div>
+
+          <div class="process-item" id="process3">
+            <span class="process-icon">○</span>
+            <span>Evaluating hospital readiness</span>
+          </div>
+
+          <div class="process-item" id="process4">
+            <span class="process-icon">○</span>
+            <span>Optimizing response route</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SCREEN 4 — RESPONSE
+    ========================== -->
+
+    <section id="response" class="screen">
+
+      <div class="page-heading">
+        <span class="eyebrow">RESPONSE PLAN READY</span>
+
+        <h2>Emergency Response</h2>
+
+        <p>
+          ResQ has prepared the recommended response plan.
+        </p>
+      </div>
+
+
+      <div class="response-grid">
+
+        <!-- Ambulance -->
+        <div class="response-card ambulance-card">
+
+          <div class="card-top">
+            <span class="card-icon">🚑</span>
+            <span class="live-label">AVAILABLE</span>
+          </div>
+
+          <small>RECOMMENDED AMBULANCE</small>
+
+          <h3>Ambulance A-12</h3>
+
+          <div class="big-number">
+            06 <span>min ETA</span>
+          </div>
+
+          <p>
+            3.8 km away · Low traffic
+          </p>
+
+        </div>
+
+
+        <!-- Hospital -->
+        <div class="response-card">
+
+          <div class="card-top">
+            <span class="card-icon">🏥</span>
+            <span class="ready-label">READY</span>
+          </div>
+
+          <small>RECOMMENDED HOSPITAL</small>
+
+          <h3>City Emergency Hospital</h3>
+
+          <div class="hospital-info">
+            <span>4.2 km</span>
+            <span>Emergency Available</span>
+          </div>
+
+          <p>
+            Trauma team notified for incoming emergency.
+          </p>
+
+        </div>
+
+
+        <!-- Route -->
+        <div class="response-card route-card">
+
+          <div class="card-top">
+            <span class="card-icon">🧭</span>
+            <span class="live-label">OPTIMIZED</span>
+          </div>
+
+          <small>RECOMMENDED ROUTE</small>
+
+          <h3>Fast Response Route</h3>
+
+          <div class="route-line">
+            <span>Accident</span>
+            <div class="line"></div>
+            <span>Hospital</span>
+          </div>
+
+          <p>
+            Estimated response time: <strong>08 minutes</strong>
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="response-action">
+
+        <button class="primary-btn" onclick="startLiveResponse()">
+          🚑 Start Response
+        </button>
+
+        <button class="back-btn" onclick="showScreen('report')">
+          ← Edit Emergency
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         LIVE RESPONSE
+    ========================== -->
+
+    <section id="live" class="screen">
+
+      <div class="page-heading">
+        <span class="eyebrow">LIVE RESPONSE</span>
+
+        <h2>Emergency in Progress</h2>
+
+        <p>Monitoring response conditions and route status.</p>
+      </div>
+
+      <div class="live-dashboard">
+
+        <div class="map-placeholder">
+
+          <div class="map-grid"></div>
+
+          <div class="map-marker accident-marker">🚨</div>
+
+          <div class="route-path"></div>
+
+          <div class="map-marker ambulance-marker" id="ambulanceMarker">
+            🚑
+          </div>
+
+          <div class="map-marker hospital-marker">🏥</div>
+
+          <div class="map-label accident-label">
+            Accident
+          </div>
+
+          <div class="map-label hospital-label">
+            City Emergency Hospital
+          </div>
+
+        </div>
+
+
+        <div class="live-panel">
+
+          <div class="live-status">
+            <span class="status-dot"></span>
+            RESPONSE ACTIVE
+          </div>
+
+          <div class="live-item">
+            <small>AMBULANCE</small>
+            <strong>A-12</strong>
+            <span>En route</span>
+          </div>
+
+          <div class="live-item">
+            <small>DESTINATION</small>
+            <strong>City Emergency Hospital</strong>
+            <span>4.2 km</span>
+          </div>
+
+          <div class="live-item">
+            <small>ESTIMATED ARRIVAL</small>
+            <strong id="eta">08:00</strong>
+            <span>minutes</span>
+          </div>
+
+          <button
+            class="traffic-btn"
+            onclick="simulateTraffic()"
+          >
+            🚧 Simulate Traffic Change
+          </button>
+
+          <div id="trafficMessage" class="traffic-message">
+            Route conditions normal.
+          </div>
+
+          <button
+            class="primary-btn full-btn"
+            onclick="completeResponse()"
+          >
+            🏥 Notify Hospital
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMPLETE
+    ========================== -->
+
+    <section id="complete" class="screen">
+
+      <div class="complete-container">
+
+        <div class="success-icon">✓</div>
+
+        <span class="eyebrow">RESPONSE COMPLETE</span>
+
+        <h2>Hospital Alert Sent</h2>
+
+        <p>
+          The emergency response plan has been successfully coordinated.
+        </p>
+
+        <div class="complete-cards">
+
+          <div>
+            <span>🚑</span>
+            <strong>Ambulance A-12</strong>
+            <small>Response dispatched</small>
+          </div>
+
+          <div>
+            <span>🏥</span>
+            <strong>Hospital Ready</strong>
+            <small>Emergency team notified</small>
+          </div>
+
+          <div>
+            <span>🧭</span>
+            <strong>Route Optimized</strong>
+            <small>Fastest available path</small>
+          </div>
+
+        </div>
+
+        <button class="primary-btn" onclick="showScreen('home')">
+          Start New Emergency
+        </button>
+
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
