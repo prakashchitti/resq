@@ -136,38 +136,47 @@ function startLiveResponse() {
 
 function simulateTraffic() {
 
-  const eta =
-    document.getElementById("eta");
+  const eta = document.getElementById("eta");
+  const message = document.getElementById("trafficMessage");
+  const ambulance = document.getElementById("ambulanceMarker");
 
-  const message =
-    document.getElementById("trafficMessage");
+  const routes = document.querySelectorAll(".route-option");
 
-  const ambulance =
-    document.getElementById("ambulanceMarker");
-
+  // Traffic detected
   message.innerHTML =
     "⚠️ <strong>Traffic detected.</strong><br>" +
-    "ResQ is recalculating the emergency route...";
+    "ResQ AI is recalculating the emergency route...";
 
-  eta.textContent = "—";
+  eta.textContent = "--";
 
-  /* Small delay to make the AI feel like it is processing */
+  // Update route intelligence
+  if (routes.length >= 2) {
+    routes[0].querySelector("b").textContent = "11 min ❌";
+    routes[0].classList.add("route-bad");
 
+    routes[1].querySelector("b").textContent = "07 min ✓";
+    routes[1].classList.add("route-good");
+  }
+
+  // AI recalculation delay
   setTimeout(() => {
 
     message.innerHTML =
-      "🟢 <strong>Route optimized.</strong><br>" +
-      "Alternative route selected. Estimated time saved: 4 min.";
+      "🧠 <strong>Route optimized.</strong><br>" +
+      "Route B selected. Time saved: 4 min.";
 
-    eta.textContent = "04:00";
+    eta.textContent = "07:00";
 
-    /* Move ambulance visually */
-
-    ambulance.style.transition =
-      "all 2s ease";
-
+    // Move ambulance to optimized route
+    ambulance.style.transition = "all 2s ease";
     ambulance.style.left = "63%";
     ambulance.style.top = "40%";
+
+    // Highlight selected route
+    if (routes.length >= 2) {
+      routes[1].style.boxShadow =
+        "0 0 18px rgba(92,230,155,0.25)";
+    }
 
   }, 1600);
 }
