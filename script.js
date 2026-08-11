@@ -142,24 +142,36 @@ function simulateTraffic() {
 
   const routes = document.querySelectorAll(".route-option");
 
-  // Traffic detected
+  // STEP 1 — Traffic detected
   message.innerHTML =
     "⚠️ <strong>Traffic detected.</strong><br>" +
     "ResQ AI is recalculating the emergency route...";
 
   eta.textContent = "--";
 
-  // Update route intelligence
+  // STEP 2 — Update Route A and Route B
   if (routes.length >= 2) {
-    routes[0].querySelector("b").textContent = "11 min ❌";
-    routes[0].classList.add("route-bad");
 
-    routes[1].querySelector("b").textContent = "07 min ✓";
+    routes[0].innerHTML =
+      "<div>" +
+      "<strong>Route A</strong>" +
+      "<small>Traffic detected</small>" +
+      "</div>" +
+      "<b>11 min ❌</b>";
+
+    routes[1].innerHTML =
+      "<div>" +
+      "<strong>Route B</strong>" +
+      "<small>AI optimized route</small>" +
+      "</div>" +
+      "<b>07 min ✓</b>";
+
+    routes[0].classList.add("route-bad");
     routes[1].classList.add("route-good");
   }
 
-  // AI recalculation delay
-  setTimeout(() => {
+  // STEP 3 — AI recalculation
+  setTimeout(function () {
 
     message.innerHTML =
       "🧠 <strong>Route optimized.</strong><br>" +
@@ -167,15 +179,15 @@ function simulateTraffic() {
 
     eta.textContent = "07:00";
 
-    // Move ambulance to optimized route
+    // Move ambulance
     ambulance.style.transition = "all 2s ease";
     ambulance.style.left = "63%";
     ambulance.style.top = "40%";
 
-    // Highlight selected route
+    // Highlight Route B
     if (routes.length >= 2) {
       routes[1].style.boxShadow =
-        "0 0 18px rgba(92,230,155,0.25)";
+        "0 0 18px rgba(92,230,155,0.35)";
     }
 
   }, 1600);
