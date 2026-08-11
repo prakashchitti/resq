@@ -171,25 +171,27 @@ function simulateTraffic() {
   }
 
   // STEP 3 — AI recalculation
+  setTimeout(function () {
 
     message.innerHTML =
-  "🚑 <strong>Route optimized.</strong><br>" +
-  "Route B selected. Time saved: 4 min.";
+      "🧠 <strong>Route optimized.</strong><br>" +
+      "Route B selected. Time saved: 4 min.";
 
-eta.textContent = "07:00";
+    eta.textContent = "07:00";
 
-// Move ambulance
-ambulance.style.transition = "all 2s ease";
-ambulance.style.left = "63%";
-ambulance.style.to
+    // Move ambulance
+    ambulance.style.transition = "all 2s ease";
+    ambulance.style.left = "63%";
+    ambulance.style.top = "40%";
 
-// Highlight Route B
-if (routes.length >= 2) {
-  routes[1].style.boxShadow =
-    "0 0 18px rgba(92,230,155,0.35)";
+    // Highlight Route B
+    if (routes.length >= 2) {
+      routes[1].style.boxShadow =
+        "0 0 18px rgba(92,230,155,0.35)";
+    }
+
+  }, 1600);
 }
-      
-
 
 /* =========================
    HOSPITAL NOTIFICATION
