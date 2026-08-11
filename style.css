@@ -638,4 +638,212 @@ button {
   z-index: 5;
   padding: 7px 10px;
   border-radius: 7px;
-  background: rgba(7,
+  background: rgba(7,9,13,0.88);
+  border: 1px solid var(--border);
+  font-size: 10px;
+  color: #c9d0da;
+}
+
+.accident-label {
+  left: 12%;
+  top: 66%;
+}
+
+.hospital-label {
+  right: 7%;
+  top: 41%;
+}
+
+.live-panel {
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: #0d1118;
+}
+
+.live-status {
+  color: #ff777e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 28px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.live-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.live-item small {
+  display: block;
+  color: #697486;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  margin-bottom: 7px;
+}
+
+.live-item strong {
+  display: block;
+  font-size: 20px;
+}
+
+.live-item span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.traffic-btn {
+  width: 100%;
+  margin-top: 22px;
+  padding: 13px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,173,77,0.3);
+  color: #ffc27b;
+  background: rgba(255,173,77,0.06);
+}
+
+.traffic-message {
+  min-height: 45px;
+  padding: 12px 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================
+   COMPLETE
+========================= */
+
+.complete-container {
+  max-width: 850px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.success-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 45px;
+  color: white;
+  background: rgba(39,209,127,0.13);
+  border: 1px solid rgba(39,209,127,0.3);
+  box-shadow: 0 0 50px rgba(39,209,127,0.12);
+}
+
+.complete-container h2 {
+  font-size: 52px;
+  letter-spacing: -2px;
+  margin: 12px 0;
+}
+
+.complete-container > p {
+  color: var(--muted);
+}
+
+.complete-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 45px 0;
+}
+
+.complete-cards div {
+  padding: 22px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.complete-cards span {
+  display: block;
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.complete-cards strong,
+.complete-cards small {
+  display: block;
+}
+
+.complete-cards small {
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+  .feature-row,
+  .response-grid,
+  .complete-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .live-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .map-placeholder {
+    height: 430px;
+  }
+
+  .hero h2 {
+    letter-spacing: -3px;
+  }
+
+  .hero-stats {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .topbar {
+    padding: 0 20px;
+  }
+
+  .status {
+    display: none;
+  }
+
+  .screen {
+    padding: 45px 20px;
+  }
+
+  .hero {
+    margin-top: 25px;
+  }
+
+  .hero h2 {
+    font-size: 55px;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .severity-options {
+    flex-direction: column;
+  }
+
+  .complete-container h2 {
+    font-size: 38px;
+  }
+  }
