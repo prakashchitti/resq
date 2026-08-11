@@ -346,91 +346,294 @@
          LIVE RESPONSE
     ========================== -->
 
-    <section id="live" class="screen">
+  <section id="live" class="screen">
 
-      <div class="page-heading">
-        <span class="eyebrow">LIVE RESPONSE</span>
+  <div class="page-heading">
+    <span class="eyebrow">LIVE COMMAND CENTER</span>
+    <h2>Emergency Response Command</h2>
+    <p>Real-time coordination of ambulance, route and hospital readiness.</p>
+  </div>
 
-        <h2>Emergency in Progress</h2>
+  <div class="command-grid">
 
-        <p>Monitoring response conditions and route status.</p>
+    <!-- INCIDENT -->
+    <div class="command-card incident-card">
+      <div class="card-title">
+        <span>🚨 ACTIVE INCIDENT</span>
+        <b class="live-badge">LIVE</b>
       </div>
 
-      <div class="live-dashboard">
+      <h3>Road Accident</h3>
+      <p>Tirupati Bypass</p>
 
-        <div class="map-placeholder">
+      <div class="incident-stats">
+        <div>
+          <small>PATIENTS</small>
+          <strong>02</strong>
+        </div>
+        <div>
+          <small>SEVERITY</small>
+          <strong class="critical">CRITICAL</strong>
+        </div>
+        <div>
+          <small>INCIDENT ID</small>
+          <strong>INC-08421</strong>
+        </div>
+      </div>
+    </div>
 
-          <div class="map-grid"></div>
+    <!-- AMBULANCE FLEET -->
+    <div class="command-card fleet-card">
+      <div class="card-title">
+        <span>🚑 AMBULANCE FLEET</span>
+        <span class="online-text">3 UNITS</span>
+      </div>
 
-          <div class="map-marker accident-marker">🚨</div>
+      <div class="fleet-row selected-unit">
+        <div>
+          <strong>A-12</strong>
+          <small>3.8 km • Low traffic</small>
+        </div>
+        <div>
+          <b>06 min</b>
+          <span>AVAILABLE</span>
+        </div>
+      </div>
 
-          <div class="route-path"></div>
+      <div class="fleet-row">
+        <div>
+          <strong>A-07</strong>
+          <small>2.4 km • Heavy traffic</small>
+        </div>
+        <div>
+          <b>09 min</b>
+          <span class="busy">BUSY</span>
+        </div>
+      </div>
 
-          <div class="map-marker ambulance-marker" id="ambulanceMarker">
-            🚑
-          </div>
+      <div class="fleet-row">
+        <div>
+          <strong>A-21</strong>
+          <small>5.1 km • Low traffic</small>
+        </div>
+        <div>
+          <b>12 min</b>
+          <span>AVAILABLE</span>
+        </div>
+      </div>
+    </div>
 
-          <div class="map-marker hospital-marker">🏥</div>
+    <!-- AI DECISION -->
+    <div class="command-card ai-card">
+      <div class="card-title">
+        <span>🧠 AI DECISION ENGINE</span>
+        <b class="ai-badge">RECOMMENDED</b>
+      </div>
 
-          <div class="map-label accident-label">
-            Accident
-          </div>
+      <h3>A-12</h3>
+      <p>Why this ambulance?</p>
 
-          <div class="map-label hospital-label">
-            City Emergency Hospital
-          </div>
+      <div class="decision-list">
+        <div>✓ Lowest estimated arrival time</div>
+        <div>✓ Low traffic conditions</div>
+        <div>✓ Currently available</div>
+        <div>✓ Suitable response unit</div>
+      </div>
 
+      <div class="recommendation">
+        AI Recommendation: <strong>A-12</strong>
+      </div>
+    </div>
+
+    <!-- MAP -->
+    <div class="command-card map-card">
+
+      <div class="card-title">
+        <span>🗺️ LIVE RESPONSE MAP</span>
+        <span class="online-text">GPS CONNECTED</span>
+      </div>
+
+      <div class="command-map">
+
+        <div class="map-grid"></div>
+
+        <div class="map-road road-one"></div>
+        <div class="map-road road-two"></div>
+
+        <div class="map-route"></div>
+
+        <div class="command-marker accident-point">🚨</div>
+        <div class="command-marker ambulance-one">🚑</div>
+        <div class="command-marker ambulance-two">🚑</div>
+        <div class="command-marker hospital-one">🏥</div>
+        <div class="command-marker traffic-point">🚧</div>
+
+        <span class="map-tag accident-tag">ACCIDENT</span>
+        <span class="map-tag hospital-tag">CITY EMERGENCY</span>
+        <span class="map-tag traffic-tag">TRAFFIC</span>
+
+      </div>
+
+    </div>
+
+    <!-- HOSPITAL INTELLIGENCE -->
+    <div class="command-card hospital-card">
+
+      <div class="card-title">
+        <span>🏥 HOSPITAL INTELLIGENCE</span>
+        <span class="online-text">CONNECTED</span>
+      </div>
+
+      <div class="hospital-row recommended-hospital">
+        <div>
+          <strong>City Emergency</strong>
+          <small>4.2 km • Trauma Ready</small>
+        </div>
+        <span>🟢 READY</span>
+      </div>
+
+      <div class="hospital-row">
+        <div>
+          <strong>Metro Care</strong>
+          <small>3.1 km • Emergency Full</small>
+        </div>
+        <span class="hospital-full">🔴 FULL</span>
+      </div>
+
+      <div class="hospital-row">
+        <div>
+          <strong>Apollo Unit</strong>
+          <small>6.5 km • Trauma Ready</small>
+        </div>
+        <span>🟢 READY</span>
+      </div>
+
+      <div class="hospital-recommendation">
+        Recommended Hospital:
+        <strong>City Emergency</strong>
+      </div>
+
+    </div>
+
+    <!-- TRAFFIC -->
+    <div class="command-card traffic-card">
+
+      <div class="card-title">
+        <span>🚧 ROUTE INTELLIGENCE</span>
+        <span class="online-text">MONITORING</span>
+      </div>
+
+      <div class="route-option route-bad">
+        <div>
+          <strong>Route A</strong>
+          <small>Traffic detected</small>
+        </div>
+        <b>11 min ❌</b>
+      </div>
+
+      <div class="route-option route-good">
+        <div>
+          <strong>Route B</strong>
+          <small>Alternative route</small>
+        </div>
+        <b>07 min ✅</b>
+      </div>
+
+      <button class="traffic-btn" onclick="simulateTraffic()">
+        🚧 Simulate Traffic Change
+      </button>
+
+      <div id="trafficMessage" class="traffic-message">
+        Route conditions normal. Monitoring live traffic.
+      </div>
+
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="command-card timeline-card">
+
+      <div class="card-title">
+        <span>📡 EMERGENCY TIMELINE</span>
+        <span class="online-text">AUDIT LOG</span>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item done">
+          <span>22:14:03</span>
+          <p>Emergency received</p>
         </div>
 
+        <div class="timeline-item done">
+          <span>22:14:04</span>
+          <p>Location verified</p>
+        </div>
 
-        <div class="live-panel">
+        <div class="timeline-item done">
+          <span>22:14:05</span>
+          <p>Ambulance A-12 selected</p>
+        </div>
 
-          <div class="live-status">
-            <span class="status-dot"></span>
-            RESPONSE ACTIVE
-          </div>
+        <div class="timeline-item done">
+          <span>22:14:06</span>
+          <p>Hospital capacity checked</p>
+        </div>
 
-          <div class="live-item">
-            <small>AMBULANCE</small>
-            <strong>A-12</strong>
-            <span>En route</span>
-          </div>
+        <div class="timeline-item done">
+          <span>22:14:07</span>
+          <p>Route optimized</p>
+        </div>
 
-          <div class="live-item">
-            <small>DESTINATION</small>
-            <strong>City Emergency Hospital</strong>
-            <span>4.2 km</span>
-          </div>
+        <div class="timeline-item active">
+          <span>NOW</span>
+          <p>Monitoring response</p>
+        </div>
+      </div>
 
-          <div class="live-item">
-            <small>ESTIMATED ARRIVAL</small>
-            <strong id="eta">08:00</strong>
-            <span>minutes</span>
-          </div>
+    </div>
 
-          <button
-            class="traffic-btn"
-            onclick="simulateTraffic()"
-          >
-            🚧 Simulate Traffic Change
-          </button>
+    <!-- METRICS -->
+    <div class="command-card metrics-card">
 
-          <div id="trafficMessage" class="traffic-message">
-            Route conditions normal.
-          </div>
+      <div class="card-title">
+        <span>📊 RESPONSE METRICS</span>
+        <span class="online-text">LIVE</span>
+      </div>
 
-          <button
-            class="primary-btn full-btn"
-            onclick="completeResponse()"
-          >
-            🏥 Notify Hospital
-          </button>
+      <div class="metric-grid">
 
+        <div>
+          <small>ESTIMATED RESPONSE</small>
+          <strong>06:42</strong>
+        </div>
+
+        <div>
+          <small>TIME SAVED</small>
+          <strong>04:18</strong>
+        </div>
+
+        <div>
+          <small>ROUTE OPTIMIZATION</small>
+          <strong>23%</strong>
+        </div>
+
+        <div>
+          <small>HOSPITAL READY</small>
+          <strong class="metric-good">✓</strong>
         </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </div>
+
+  <div class="response-action">
+    <button class="primary-btn" onclick="completeResponse()">
+      🏥 Notify Hospital
+    </button>
+  </div>
+
+</section>
 
 
     <!-- =========================
