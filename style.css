@@ -847,3 +847,441 @@ button {
     font-size: 38px;
   }
   }
+/* ================================
+RESQ 2.0 COMMAND CENTER
+================================ */
+
+.command-grid {
+max-width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 18px;
+}
+
+.command-card {
+background: linear-gradient(145deg, rgba(18,23,32,.96), rgba(9,12,18,.98));
+border: 1px solid rgba(255,255,255,.08);
+border-radius: 18px;
+padding: 20px;
+box-shadow: 0 12px 35px rgba(0,0,0,.22);
+}
+
+.command-card:hover {
+border-color: rgba(255,70,85,.35);
+transform: translateY(-2px);
+transition: .25s ease;
+}
+
+.card-title {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 18px;
+font-size: 12px;
+letter-spacing: 1px;
+color: #aeb5c2;
+}
+
+.live-badge,
+.ai-badge {
+color: #65e6a0;
+font-size: 9px;
+padding: 5px 9px;
+border-radius: 20px;
+background: rgba(50,220,130,.10);
+}
+
+.online-text {
+color: #62e49b;
+font-size: 9px;
+letter-spacing: .7px;
+}
+
+.incident-card {
+border-top: 2px solid #ff394d;
+}
+
+.incident-card h3 {
+font-size: 25px;
+margin: 5px 0;
+}
+
+.incident-card p {
+color: #8e96a5;
+}
+
+.incident-stats {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 10px;
+margin-top: 22px;
+}
+
+.incident-stats div {
+background: rgba(255,255,255,.035);
+padding: 12px;
+border-radius: 10px;
+}
+
+.incident-stats small,
+.metric-grid small {
+display: block;
+color: #777f8e;
+font-size: 8px;
+letter-spacing: 1px;
+margin-bottom: 6px;
+}
+
+.critical {
+color: #ff4b58;
+}
+
+.fleet-row,
+.hospital-row,
+.route-option {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 13px 12px;
+margin-top: 8px;
+border-radius: 11px;
+background: rgba(255,255,255,.035);
+}
+
+.fleet-row strong,
+.hospital-row strong,
+.route-option strong {
+display: block;
+}
+
+.fleet-row small,
+.hospital-row small,
+.route-option small {
+display: block;
+color: #737c8c;
+margin-top: 4px;
+font-size: 10px;
+}
+
+.fleet-row b,
+.route-option b {
+display: block;
+text-align: right;
+font-size: 13px;
+}
+
+.fleet-row span {
+display: block;
+text-align: right;
+color: #5ce19a;
+font-size: 8px;
+margin-top: 4px;
+}
+
+.fleet-row span.busy {
+color: #ffb44c;
+}
+
+.selected-unit {
+border: 1px solid rgba(255,55,75,.55);
+background: rgba(255,45,65,.07);
+}
+
+.ai-card h3 {
+font-size: 32px;
+margin: 5px 0;
+}
+
+.ai-card p {
+color: #858d9c;
+}
+
+.decision-list {
+margin-top: 15px;
+line-height: 2;
+font-size: 12px;
+color: #b9c0cb;
+}
+
+.recommendation,
+.hospital-recommendation {
+margin-top: 16px;
+padding: 12px;
+border-radius: 10px;
+background: rgba(75,220,145,.07);
+border: 1px solid rgba(75,220,145,.15);
+color: #9ba5b5;
+}
+
+.recommendation strong,
+.hospital-recommendation strong {
+color: #62e49b;
+}
+
+/* MAP */
+
+.map-card {
+min-height: 390px;
+}
+
+.command-map {
+height: 320px;
+position: relative;
+overflow: hidden;
+border-radius: 14px;
+background: #0b1018;
+border: 1px solid rgba(255,255,255,.06);
+}
+
+.map-grid {
+position: absolute;
+inset: 0;
+background-image:
+linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+background-size: 38px 38px;
+}
+
+.map-road {
+position: absolute;
+height: 9px;
+background: #252d38;
+border-radius: 10px;
+transform: rotate(-25deg);
+}
+
+.road-one {
+width: 120%;
+top: 48%;
+left: -10%;
+}
+
+.road-two {
+width: 100%;
+top: 60%;
+left: 5%;
+transform: rotate(35deg);
+}
+
+.map-route {
+position: absolute;
+width: 65%;
+height: 4px;
+left: 18%;
+top: 57%;
+transform: rotate(-18deg);
+background: linear-gradient(90deg,#ff3c4f,#ffb54d,#5ee69b);
+box-shadow: 0 0 14px rgba(255,70,80,.45);
+}
+
+.command-marker {
+position: absolute;
+z-index: 3;
+width: 38px;
+height: 38px;
+display: grid;
+place-items: center;
+border-radius: 50%;
+background: #151c27;
+border: 1px solid rgba(255,255,255,.14);
+box-shadow: 0 5px 18px rgba(0,0,0,.4);
+}
+
+.accident-point {
+left: 12%;
+top: 60%;
+}
+
+.ambulance-one {
+left: 44%;
+top: 49%;
+animation: resqPulse 1.5s infinite;
+}
+
+.ambulance-two {
+left: 28%;
+top: 32%;
+}
+
+.hospital-one {
+right: 12%;
+top: 28%;
+}
+
+.traffic-point {
+left: 55%;
+top: 25%;
+}
+
+.map-tag {
+position: absolute;
+z-index: 4;
+font-size: 8px;
+letter-spacing: .5px;
+padding: 5px 7px;
+border-radius: 6px;
+background: rgba(5,8,13,.85);
+color: #cbd1dc;
+}
+
+.accident-tag {
+left: 7%;
+top: 73%;
+}
+
+.hospital-tag {
+right: 5%;
+top: 42%;
+}
+
+.traffic-tag {
+left: 52%;
+top: 15%;
+}
+
+@keyframes resqPulse {
+50% {
+transform: scale(1.18);
+box-shadow: 0 0 25px rgba(255,60,80,.45);
+}
+}
+
+/* HOSPITAL */
+
+.hospital-row > span {
+color: #5ce19a;
+font-size: 9px;
+}
+
+.hospital-row .hospital-full {
+color: #ff5662;
+}
+
+.recommended-hospital {
+border: 1px solid rgba(75,220,145,.22);
+}
+
+/* ROUTES */
+
+.route-bad {
+border-left: 3px solid #ff4b58;
+}
+
+.route-good {
+border-left: 3px solid #5ce19a;
+}
+
+.traffic-btn {
+width: 100%;
+margin-top: 16px;
+padding: 12px;
+border: 0;
+border-radius: 10px;
+background: #ff394d;
+color: white;
+font-weight: 700;
+cursor: pointer;
+box-shadow: 0 8px 22px rgba(255,50,70,.22);
+}
+
+.traffic-message {
+text-align: center;
+margin-top: 10px;
+color: #7f8998;
+font-size: 10px;
+}
+
+/* TIMELINE */
+
+.timeline {
+position: relative;
+margin-top: 8px;
+padding-left: 15px;
+}
+
+.timeline-item {
+position: relative;
+padding: 8px 0 8px 15px;
+border-left: 1px solid rgba(255,255,255,.12);
+}
+
+.timeline-item span {
+color: #687281;
+font-size: 9px;
+}
+
+.timeline-item p {
+margin: 3px 0 0;
+color: #c4cad4;
+font-size: 11px;
+}
+
+.timeline-item.done::before,
+.timeline-item.active::before {
+content: "";
+position: absolute;
+left: -5px;
+top: 12px;
+width: 9px;
+height: 9px;
+border-radius: 50%;
+background: #5ce19a;
+}
+
+.timeline-item.active::before {
+background: #ff394d;
+box-shadow: 0 0 12px rgba(255,60,80,.7);
+}
+
+/* METRICS */
+
+.metric-grid {
+display: grid;
+grid-template-columns: repeat(2,1fr);
+gap: 10px;
+}
+
+.metric-grid div {
+padding: 15px;
+border-radius: 11px;
+background: rgba(255,255,255,.035);
+}
+
+.metric-grid strong {
+font-size: 23px;
+}
+
+.metric-good {
+color: #5ce19a;
+}
+
+.response-action {
+text-align: center;
+margin: 25px 0 40px;
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+.command-grid {
+grid-template-columns: 1fr;
+}
+
+.incident-stats {
+grid-template-columns: 1fr;
+}
+
+.command-map {
+height: 280px;
+}
+
+.command-card {
+padding: 16px;
+}
+
+.page-heading h2 {
+font-size: 28px;
+}
+}
+
