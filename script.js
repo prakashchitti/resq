@@ -171,7 +171,6 @@ function simulateTraffic() {
   }
 
   // STEP 3 — AI recalculation
-  setTimeout(function () {
 
     message.innerHTML =
   "🚑 <strong>Route optimized.</strong><br>" +
@@ -182,7 +181,7 @@ eta.textContent = "07:00";
 // Move ambulance
 ambulance.style.transition = "all 2s ease";
 ambulance.style.left = "63%";
-ambulance.style.top = "40%";
+ambulance.style.to
 
 // Highlight Route B
 if (routes.length >= 2) {
